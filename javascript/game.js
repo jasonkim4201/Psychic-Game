@@ -28,14 +28,14 @@
      // if user input matches computer then win +1 and new round 
      if (userInput === computerInput) {
        win++;
-       alert("Congrats! You guessed " + computerInput + "."); /* To notify user they won and which letter it was */
+       alert("Congrats! You guessed \"" + computerInput + "\"."); /* To notify user they won and which letter it was */
        newRound();
      } else {
        attemptsLeft--  ; /* if wrong, attempts -1 and if attempt is 0, round over/reset. */
 
        if (attemptsLeft === 0) {
          lose++;
-         alert("Nice try. But the answer was the letter " + computerInput); /* Gives user answer */
+         alert("Nice try. But the answer was the letter \"" + computerInput + "\"."); /* Gives user answer */
          newRound();
        }
      }
