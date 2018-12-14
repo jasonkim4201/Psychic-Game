@@ -7,67 +7,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-  <!--- <script src="javascript/game.js"></script> -->
-  <title>Document</title>
+  <script src="javascript/game.js"></script> 
+  <title>Guess the letters</title>
 </head>
 
 <body>
   <h1>The Psychic Game</h1>
   <h3>Guess the letter I'm thinking of and you win!</h3>
 
+
+
   <p id="win">Wins:</p>
   <p id="lose">Losses:</p>
   <p id="attempts">Attempts left:</p>
   <p id="userGuess">Your guesses:</p>
-
-  <!-- game info HTML  -->
-  <div id="info"></div>
-
-  <script>
-    // variables to keep win/loss and guesses left
-    var win = 0;
-    var lose = 0;
-    var attempts = 10;
-    var userGuess = [];
-
-    // setting variables for alphabet array for computer choice
-    var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
-      "u", "v", "w", "x", "y", "z"];
-    //console.log(alphabet)
-
-    //function needed to select a new letter, clear attempted guesses, and remaining guess counter.
-    function newRound() {
-      computerInput = alphabet[Math.floor(Math.random() * alphabet.length)];
-      userGuess = [];
-      attempts = 10;
-    }
-
-    newRound();
-    document.onkeyup = function (event) {
-      //user input
-      var userInput = event.key.toLowerCase();
-
-      // player input match computer input
-      if (attempts > 0) {
-        userGuess.push(userInput); /* THIS WILL PUSH YOUR INPUT INTO THE LIST OF GUESSES YOU MADE SO FAR */
-        // if user input matches computer then win +1 and new round 
-        if (userInput === computerInput) {
-          win++;
-          newRound();
-        } else {
-          attempts++; /* if wrong, attempts -1 and if attempt is 0, round over/reset. */
-
-          if (attempts === 0) {
-            lose++;
-            newRound();
-          }
-        }
-      }
-    }
-
-
-    // comparing the player's guess vs computer's chosen variable with wins/loss
-  </script>
+  
 
 </body>
 
